@@ -185,7 +185,7 @@ export const PROFILE_LENSES: Record<ProfileLensId, ProfileLens> = {
 export const RESUME_OPTIONS: ResumeOption[] = [
   {
     id: "qa",
-    title: "Currículo QA & Automação (Padrão ATS — 1 Página)",
+    title: "Currículo QA & Automação (Executivo + ATS)",
     targetRole: "Analista de Testes / QA Júnior — Playwright, BDD/Gherkin, APIs, ERP e CI/CD",
     language: "PT-BR",
     filename: "Curriculo-Daniel-Lima-QA-Automacao.pdf",
@@ -194,7 +194,7 @@ export const RESUME_OPTIONS: ResumeOption[] = [
   },
   {
     id: "fullstack",
-    title: "Currículo Desenvolvedor Full Stack (Padrão ATS — 1 Página)",
+    title: "Currículo Desenvolvedor Full Stack (Executivo + ATS)",
     targetRole: "Desenvolvedor Full Stack Júnior — Next.js, React, TypeScript, Python, Supabase e SQL",
     language: "PT-BR",
     filename: "Curriculo-Daniel-Lima-FullStack.pdf",
