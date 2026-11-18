@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const siteUrl =
+  process.env.GITHUB_PAGES === "true"
+    ? "https://daniel-slima.github.io/Portfolio"
+    : "https://portfolio-daniel-lima.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portfolio-daniel-lima.vercel.app"),
+  metadataBase: new URL(siteUrl),
   title: "Daniel Santana Lima | QA, Automação de Testes & Full Stack",
   description:
     "Portfólio interativo de Daniel Santana Lima — Qualidade de Software (ERP Nasajon & TOTVS), Automação com Playwright/BDD e Desenvolvimento Full Stack com Next.js, TypeScript e Supabase.",

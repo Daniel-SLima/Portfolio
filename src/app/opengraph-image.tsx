@@ -1,5 +1,7 @@
 import { ImageResponse } from "next/og";
 
+export const dynamic = "force-static";
+
 export const alt =
   "Daniel Santana Lima — QA, Automação de Testes & Full Stack";
 export const size = {

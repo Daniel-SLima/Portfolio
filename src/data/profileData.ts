@@ -73,11 +73,18 @@ export interface SkillCategory {
   items: { name: string; context: string }[];
 }
 
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+function withBasePath(path: string): string {
+  if (!BASE_PATH) return path;
+  return `${BASE_PATH}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
 export const CONTACT_INFO = {
   name: "Daniel Santana Lima",
   shortName: "Daniel Lima",
   age: 24,
-  avatarUrl: "/avatar-daniel.png",
+  avatarUrl: withBasePath("/avatar-daniel.png"),
   location: "Salvador, Bahia, Brasil",
   phoneDisplay: "(71) 99119-7654",
   whatsappUrl: "https://wa.me/5571991197654",
@@ -100,7 +107,7 @@ export const PROFILE_LENSES: Record<ProfileLensId, ProfileLens> = {
     summary:
       "Graduando em Análise e Desenvolvimento de Sistemas pelo IFBA (5º semestre) e Técnico pelo SENAI CIMATEC. Combino olhar investigativo de QA (Playwright, BDD/Gherkin, APIs, Pytest, SQL e JMeter) com engenharia Full Stack (React, Next.js, TypeScript, Python/FastAPI e Java) e uso estratégico de agentes de IA para acelerar entregas confiáveis.",
     accent: "emerald",
-    cvUrl: "/cv/Curriculo-Daniel-Lima-QA-Automacao.pdf",
+    cvUrl: withBasePath("/cv/Curriculo-Daniel-Lima-QA-Automacao.pdf"),
     cvLabel: "Baixar CV Principal (QA & Tech)",
     highlights: [
       { label: "QA Corporativo", value: "Nasajon ERP (Finanças, Serviços, RH)" },
@@ -121,7 +128,7 @@ export const PROFILE_LENSES: Record<ProfileLensId, ProfileLens> = {
     summary:
       "Experiência sólida em todo o ciclo de testes de software: levantamento de cenários em BDD/Gherkin, execução rigorosa em homologação, investigação de causa raiz em bancos SQL e APIs, reporte estruturado de bugs com evidências e desenvolvimento de suítes automatizadas com Playwright, Pytest e GitHub Actions.",
     accent: "emerald",
-    cvUrl: "/cv/Curriculo-Daniel-Lima-QA-Automacao.pdf",
+    cvUrl: withBasePath("/cv/Curriculo-Daniel-Lima-QA-Automacao.pdf"),
     cvLabel: "Baixar CV Foco QA (PDF)",
     highlights: [
       { label: "QA na Nasajon", value: "Testes E2E, Regressão & Homologação" },
@@ -142,7 +149,7 @@ export const PROFILE_LENSES: Record<ProfileLensId, ProfileLens> = {
     summary:
       "Base técnica formada no SENAI CIMATEC e aprimorada no IFBA (ADS). Experiência real com React, Next.js, TypeScript, Tailwind CSS, Supabase/SQL, Python (FastAPI/Flask), Docker e Java, unindo desenvolvimento orientado a regras de negócio com cultura forte de qualidade e CI/CD.",
     accent: "indigo",
-    cvUrl: "/cv/Curriculo-Daniel-Lima-FullStack.pdf",
+    cvUrl: withBasePath("/cv/Curriculo-Daniel-Lima-FullStack.pdf"),
     cvLabel: "Baixar CV Full Stack (PDF)",
     highlights: [
       { label: "Frontend Moderno", value: "Next.js, React, TypeScript & Tailwind" },
@@ -163,7 +170,7 @@ export const PROFILE_LENSES: Record<ProfileLensId, ProfileLens> = {
     summary:
       "Perfil orientado à confiabilidade operacional e melhoria contínua. Vivência com suporte a usuários corporativos, controle de acessos, análise de indicadores (Top 10 Regional no NASA Space Apps 2026), consultas SQL e manipulação de relatórios estratégicos em Excel.",
     accent: "sky",
-    cvUrl: "/cv/Curriculo-Daniel-Lima-Dados-Operacoes.pdf",
+    cvUrl: withBasePath("/cv/Curriculo-Daniel-Lima-Dados-Operacoes.pdf"),
     cvLabel: "Baixar CV Dados & Operações (PDF)",
     highlights: [
       { label: "Sistemas ERP", value: "Nasajon ERP & TOTVS Datasul" },
@@ -182,7 +189,7 @@ export const RESUME_OPTIONS: ResumeOption[] = [
     targetRole: "Analista de Testes / QA Júnior — Playwright, BDD/Gherkin, APIs e ERP",
     language: "PT-BR",
     filename: "Curriculo-Daniel-Lima-QA-Automacao.pdf",
-    url: "/cv/Curriculo-Daniel-Lima-QA-Automacao.pdf",
+    url: withBasePath("/cv/Curriculo-Daniel-Lima-QA-Automacao.pdf"),
     badge: "Recomendado para QA",
   },
   {
@@ -191,7 +198,7 @@ export const RESUME_OPTIONS: ResumeOption[] = [
     targetRole: "Desenvolvedor Full Stack Júnior — Next.js, React, TypeScript, Supabase e SQL",
     language: "PT-BR",
     filename: "Curriculo-Daniel-Lima-FullStack.pdf",
-    url: "/cv/Curriculo-Daniel-Lima-FullStack.pdf",
+    url: withBasePath("/cv/Curriculo-Daniel-Lima-FullStack.pdf"),
     badge: "Recomendado para Dev",
   },
   {
@@ -200,7 +207,7 @@ export const RESUME_OPTIONS: ResumeOption[] = [
     targetRole: "Estágio / Analista em Tecnologia, Dados, ERP, Operações e Processos",
     language: "PT-BR",
     filename: "Curriculo-Daniel-Lima-Dados-Operacoes.pdf",
-    url: "/cv/Curriculo-Daniel-Lima-Dados-Operacoes.pdf",
+    url: withBasePath("/cv/Curriculo-Daniel-Lima-Dados-Operacoes.pdf"),
     badge: "Dados & ERP",
   },
   {
@@ -209,7 +216,7 @@ export const RESUME_OPTIONS: ResumeOption[] = [
     targetRole: "QA Engineer / Software Developer — Full English Version (B2 Certified)",
     language: "EN",
     filename: "Resume-Daniel-Lima-EN.pdf",
-    url: "/cv/Resume-Daniel-Lima-EN.pdf",
+    url: withBasePath("/cv/Resume-Daniel-Lima-EN.pdf"),
     badge: "English",
   },
   {
@@ -218,7 +225,7 @@ export const RESUME_OPTIONS: ResumeOption[] = [
     targetRole: "Visão consolidada com histórico de experiências, Lirdio e certificações",
     language: "PT-BR",
     filename: "Linkedin-Daniel-Lima.pdf",
-    url: "/cv/Linkedin-Daniel-Lima.pdf",
+    url: withBasePath("/cv/Linkedin-Daniel-Lima.pdf"),
     badge: "LinkedIn Export",
   },
 ];

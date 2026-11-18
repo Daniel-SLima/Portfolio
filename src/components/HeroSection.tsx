@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -197,13 +196,13 @@ export function HeroSection({
               <div className="flex items-center justify-between gap-4 border-b border-slate-800 pb-5">
                 <div className="flex items-center gap-3.5">
                   <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl border-2 border-emerald-500/50 shadow-lg shadow-emerald-500/10">
-                    <Image
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
                       src={CONTACT_INFO.avatarUrl}
                       alt="Foto profissional de Daniel Santana Lima"
-                      fill
-                      sizes="64px"
-                      priority
-                      className="object-cover"
+                      width={64}
+                      height={64}
+                      className="h-full w-full object-cover"
                     />
                   </div>
                   <div>
