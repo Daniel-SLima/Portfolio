@@ -185,21 +185,21 @@ export const PROFILE_LENSES: Record<ProfileLensId, ProfileLens> = {
 export const RESUME_OPTIONS: ResumeOption[] = [
   {
     id: "qa",
-    title: "Currículo QA & Automação (2026)",
-    targetRole: "Analista de Testes / QA Júnior — Playwright, BDD/Gherkin, APIs e ERP",
+    title: "Currículo QA & Automação (Padrão ATS — 1 Página)",
+    targetRole: "Analista de Testes / QA Júnior — Playwright, BDD/Gherkin, APIs, ERP e CI/CD",
     language: "PT-BR",
     filename: "Curriculo-Daniel-Lima-QA-Automacao.pdf",
     url: withBasePath("/cv/Curriculo-Daniel-Lima-QA-Automacao.pdf"),
-    badge: "Recomendado para QA",
+    badge: "Recomendado QA • ATS",
   },
   {
     id: "fullstack",
-    title: "Currículo Desenvolvedor Full Stack",
-    targetRole: "Desenvolvedor Full Stack Júnior — Next.js, React, TypeScript, Supabase e SQL",
+    title: "Currículo Desenvolvedor Full Stack (Padrão ATS — 1 Página)",
+    targetRole: "Desenvolvedor Full Stack Júnior — Next.js, React, TypeScript, Python, Supabase e SQL",
     language: "PT-BR",
     filename: "Curriculo-Daniel-Lima-FullStack.pdf",
     url: withBasePath("/cv/Curriculo-Daniel-Lima-FullStack.pdf"),
-    badge: "Recomendado para Dev",
+    badge: "Recomendado Dev • ATS",
   },
   {
     id: "data",
