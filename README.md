@@ -4,6 +4,7 @@
 
 **QA & Automação de Testes • Desenvolvimento Full Stack • Sistemas ERP**
 
+[![Live Site](https://img.shields.io/badge/Acessar_Portfólio-Online_(GitHub_Pages)-22C55E?style=flat&logo=github&logoColor=0F172A)](https://daniel-slima.github.io/Portfolio/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-@DanielLimaQA-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/daniellimaqa)
 [![GitHub](https://img.shields.io/badge/GitHub-Daniel--SLima-181717?style=flat&logo=github&logoColor=white)](https://github.com/Daniel-SLima)
 [![Next.js](https://img.shields.io/badge/Next.js-15-000000?logo=nextdotjs&logoColor=white)](https://nextjs.org/)
