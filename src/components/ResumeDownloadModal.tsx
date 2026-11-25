@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Download, FileCheck2, Globe, X } from "lucide-react";
 import { RESUME_OPTIONS } from "@/data/profileData";
 
@@ -13,16 +13,39 @@ export function ResumeDownloadModal({
   isOpen,
   onClose,
 }: ResumeDownloadModalProps) {
-  if (!isOpen) return null;
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+
+    if (!isOpen) {
+      if (dialog.open) dialog.close();
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    if (!dialog.open) dialog.showModal();
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      if (dialog.open) dialog.close();
+    };
+  }, [isOpen]);
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-sm"
-      role="dialog"
-      aria-modal="true"
+    <dialog
+      ref={dialogRef}
+      className="fixed inset-0 m-0 h-dvh max-h-none w-screen max-w-none items-center justify-center bg-transparent p-4 text-slate-100 open:flex backdrop:bg-slate-950/80 backdrop:backdrop-blur-sm"
       aria-labelledby="resume-modal-title"
+      aria-describedby="resume-modal-description"
+      onCancel={(event) => {
+        event.preventDefault();
+        onClose();
+      }}
     >
-      <div className="relative w-full max-w-2xl rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
+      <div className="relative max-h-[calc(100dvh-2rem)] w-full max-w-2xl overflow-y-auto rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
         <div className="flex items-start justify-between gap-4 border-b border-slate-800 pb-4">
           <div>
             <h2
@@ -31,14 +54,15 @@ export function ResumeDownloadModal({
             >
               Central de Currículos (PDF)
             </h2>
-            <p className="mt-1 text-sm text-slate-400">
-              Escolha a versão do currículo mais alinhada ao perfil da sua vaga.
+            <p id="resume-modal-description" className="mt-1 text-sm text-slate-400">
+              QA e Full Stack, em português e inglês. Escolha a área e o idioma da sua vaga.
             </p>
           </div>
           <button
             type="button"
             onClick={onClose}
             aria-label="Fechar janela de currículos"
+            autoFocus
             className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-950 text-slate-400 transition-colors hover:text-white cursor-pointer"
           >
             <X className="h-5 w-5" />
@@ -73,6 +97,7 @@ export function ResumeDownloadModal({
                 download={cv.filename}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Baixar ${cv.title} em ${cv.language === "EN" ? "inglês" : "português"} (PDF)`}
                 className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-emerald-500 px-4 py-2.5 text-xs font-semibold text-slate-950 transition-colors duration-200 hover:bg-emerald-400 cursor-pointer"
               >
                 <Download className="h-4 w-4" />
@@ -82,6 +107,6 @@ export function ResumeDownloadModal({
           ))}
         </div>
       </div>
-    </div>
+    </dialog>
   );
 }

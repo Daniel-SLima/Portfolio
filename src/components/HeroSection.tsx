@@ -21,6 +21,7 @@ import {
   CONTACT_INFO,
   PROFILE_LENSES,
   ProfileLensId,
+  RESUME_OPTIONS,
 } from "@/data/profileData";
 import { ProfileLensSwitcher } from "./ProfileLensSwitcher";
 
@@ -117,7 +118,7 @@ export function HeroSection({
                 onClick={onOpenResumeModal}
                 className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900/80 px-4 py-3 text-sm font-medium text-slate-100 transition-colors duration-200 hover:border-slate-500 hover:bg-slate-800 cursor-pointer"
               >
-                Ver Todos os 5 CVs (PT/EN)
+                Ver os {RESUME_OPTIONS.length} currículos (PT/EN)
               </button>
 
               <Link

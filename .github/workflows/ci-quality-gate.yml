@@ -24,13 +24,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Verify resume PDF assets exist
+      - name: Verify current resume PDF assets
         run: |
-          test -f public/cv/Curriculo-Daniel-Lima-QA-Automacao.pdf
-          test -f public/cv/Curriculo-Daniel-Lima-FullStack.pdf
-          test -f public/cv/Curriculo-Daniel-Lima-Dados-Operacoes.pdf
-          test -f public/cv/Resume-Daniel-Lima-EN.pdf
-          test -f public/cv/Linkedin-Daniel-Lima.pdf
+          for file in \
+            public/cv/Curriculo-Daniel-Lima-QA-Automacao.pdf \
+            public/cv/Curriculo-Daniel-Lima-FullStack.pdf \
+            public/cv/Resume-Daniel-Lima-QA-EN.pdf \
+            public/cv/Resume-Daniel-Lima-FullStack-EN.pdf
+          do
+            test -s "$file"
+            test "$(head -c 5 "$file")" = '%PDF-'
+          done
 
       - name: Run strict TypeScript check
         run: npm run typecheck

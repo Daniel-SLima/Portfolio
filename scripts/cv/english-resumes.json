@@ -1,0 +1,192 @@
+{
+  "contact": {
+    "name": "Daniel Santana Lima",
+    "location": "Salvador, Bahia, Brazil",
+    "phone": "+55 (71) 99934-6319",
+    "email": "Dan13setembro@outlook.com",
+    "portfolio": "https://daniel-slima.github.io/Portfolio/",
+    "linkedin": "https://www.linkedin.com/in/daniellimaqa/",
+    "github": "https://github.com/Daniel-SLima"
+  },
+  "awards": [
+    {
+      "title": "NASA Space Apps Challenge 2026 - Regional Top 10 & Nominated for Global Evaluation",
+      "text": "Worked in a team to develop a prototype for biometric monitoring of astronauts' health, using indicator analysis to support decision-making."
+    },
+    {
+      "title": "Salvador Lab & Bahia Tech Experience (2023)",
+      "text": "Two-time state-level innovation finalist with the Lirdio platform."
+    }
+  ],
+  "education": [
+    {
+      "title": "Undergraduate Technology Degree in Systems Analysis and Development",
+      "institution": "IFBA - Evening program",
+      "detail": "In progress: 5th semester | Expected completion: first half of 2028 (2028.1)"
+    },
+    {
+      "title": "Technical Diploma in Systems Development",
+      "institution": "SENAI CIMATEC",
+      "detail": "Completed December 2023"
+    }
+  ],
+  "certifications": [
+    "SQL Short Course - Xperiun (2025)",
+    "Intermediate Microsoft Excel - Fundação Bradesco (2024)"
+  ],
+  "languages": [
+    ["English", "Intermediate / Professional (B2) - Voxy certificate"],
+    ["French", "Basic / Intermediate - Eight-month in-person exchange in France"],
+    ["Portuguese", "Native"]
+  ],
+  "resumes": [
+    {
+      "key": "qa",
+      "filename": "Resume-Daniel-Lima-QA-EN.pdf",
+      "accent": "#07566A",
+      "label": "Quality Assurance",
+      "headline": "Software Test Analyst / Quality Assurance (QA)",
+      "specialization": "Playwright Automation, BDD & API Testing",
+      "summary": "Quality Assurance (QA) professional with hands-on experience validating enterprise resource planning systems (Nasajon ERP and TOTVS Datasul) and web applications. Work across the quality lifecycle: BDD / Gherkin scenario design; functional, exploratory and regression testing; retesting in staging environments; failure investigation through SQL and REST APIs; and End-to-End (E2E) test automation with Playwright, TypeScript, Pytest and GitHub Actions (CI/CD).",
+      "skills": [
+        ["QA & Software Testing", "Functional, manual, exploratory, regression and smoke testing; retesting; test plans and test cases; BDD and Gherkin; structured bug reports (evidence, severity and steps to reproduce)."],
+        ["Automation, API & Load Testing", "Playwright (TypeScript / JavaScript); Page Object Model (POM); REST API testing (HTTP status codes, contracts and payloads); Pytest; Apache JMeter and BlazeMeter; CI/CD (GitHub Actions); Docker."],
+        ["Code, Data & ERP Systems", "SQL (PostgreSQL, Supabase, SQLite); Python; TypeScript / JavaScript; Java; Next.js and React; Nasajon ERP (Finance, Services and HR); TOTVS Datasul ERP; RBAC."],
+        ["Tools & Management", "Git and GitHub; Zendesk and Fluig; intermediate Microsoft Excel; AI agents applied to test engineering (Claude Code and Codex)."]
+      ],
+      "experience": [
+        {
+          "company": "Nasajon Sistemas",
+          "role": "Quality Assurance (QA) Intern - Software Testing",
+          "dates": "Oct 2025 - Present",
+          "bullets": [
+            "Perform functional, exploratory and regression testing on the Finance, Services and Human Resources modules of Nasajon ERP and on web applications in staging environments.",
+            "Validate complex business rules and customized deliveries for enterprise clients, reducing regression risks before production releases.",
+            "Investigate root causes, reproduce incidents and document detailed bug reports with evidence, preconditions and expected behavior; conduct thorough retesting with the technical team.",
+            "Standardize acceptance scenarios in BDD / Gherkin, monitor build health and contribute to continuous improvements in test automation processes."
+          ]
+        },
+        {
+          "company": "Gnaritas Sistemas",
+          "role": "IT Intern - TOTVS ERP Support & Acceptance Testing",
+          "dates": "Aug 2024 - Feb 2025",
+          "bullets": [
+            "Performed functional testing of new customized routines in TOTVS Datasul ERP, validating operational workflows and business rules before release to users.",
+            "Investigated incidents, provided specialized support, administered users and access permissions, and managed tickets through Zendesk and Fluig."
+          ]
+        },
+        {
+          "company": "Lirdio",
+          "role": "Full Stack Developer & Performance QA",
+          "dates": "Jan 2023 - Dec 2023",
+          "note": "Two-time state-level finalist",
+          "bullets": [
+            "Planned and executed load, stress and performance tests with Apache JMeter and BlazeMeter for a web audiobook-streaming platform recognized at Salvador Lab and Bahia Tech Experience.",
+            "Developed responsive interfaces (HTML, CSS, JavaScript, Bootstrap, Figma) and SQL database integration for audio playback and the catalog."
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "title": "QA Automation Suite: Playwright E2E, API & BDD",
+          "url": "https://github.com/Daniel-SLima/playwright-erp-qa-suite",
+          "bullets": [
+            "Built an automated framework with Playwright and TypeScript using Page Object Model (POM), Gherkin scenarios, a test plan and continuous execution in GitHub Actions CI.",
+            "Conducted a practical bug-hunting study (teste-tecnico-qa-verzel) with exploratory sessions, evidence collection and isolation of real boundary-value and REST API contract defects (HTTP 422 vs. 200)."
+          ]
+        },
+        {
+          "title": "OrçaDemo - Sales & Production SaaS",
+          "url": "https://gerador-orcamentos-demo.vercel.app/",
+          "bullets": [
+            "Developed and validated a SaaS application in real-world use (Next.js, React, TypeScript, Supabase/PostgreSQL), with role-based approval limits for six roles, Row Level Security (RLS) policies, PDF generation and Excel reports."
+          ]
+        },
+        {
+          "title": "RagTest - Hybrid RAG Architecture, Evaluation & CI",
+          "url": "https://github.com/Daniel-SLima/RagTest",
+          "bullets": [
+            "Built a modular AI system (Python, FastAPI, Qdrant, Docker) with hybrid retrieval, automated grounding checks (faithfulness to sources), a test suite and continuous integration."
+          ]
+        }
+      ]
+    },
+    {
+      "key": "fullstack",
+      "filename": "Resume-Daniel-Lima-FullStack-EN.pdf",
+      "accent": "#26459B",
+      "label": "Full Stack Development",
+      "headline": "Junior Full Stack Developer",
+      "specialization": "Next.js, React, TypeScript, Python & SQL",
+      "summary": "Full Stack Developer studying Systems Analysis and Development at IFBA (5th semester), with a technical diploma from SENAI CIMATEC. Creator and maintainer of a commercial SaaS application in real-world use, built with Next.js, React, TypeScript, Supabase (PostgreSQL) and Tailwind CSS. End-to-end experience in SQL modeling, REST APIs (TypeScript and Python/FastAPI), access control (RBAC / RLS), and PDF and Excel generation, alongside corporate software quality experience at Nasajon (Playwright, Pytest, Docker and GitHub Actions CI/CD).",
+      "skills": [
+        ["Front-End & UI", "Next.js (App Router / SSR); React; TypeScript; JavaScript (ES6+); HTML5 and CSS3; Tailwind CSS; Bootstrap; Figma; component-based development and accessibility."],
+        ["Back-End, Data & Cloud", "Node.js / Next.js API Routes; Python (FastAPI and Flask); Java; Kotlin (Android); SQL; PostgreSQL; Supabase (Auth, Storage and RLS); SQLite; Qdrant; Docker."],
+        ["Business Rules & ERP", "Authentication and role-based access control (RBAC); dynamic PDF generation; CSV/Excel export; sales, production and finance workflows (Nasajon ERP and TOTVS Datasul)."],
+        ["Quality, Testing & DevOps", "Playwright (E2E and API); Pytest; unit and regression testing; BDD / Gherkin; JMeter; Git and GitHub; GitHub Actions (CI/CD); Claude Code and Codex."]
+      ],
+      "experience": [
+        {
+          "company": "OrçaDemo - Commercial SaaS (In Production)",
+          "role": "Full Stack Developer - Next.js & Supabase",
+          "dates": "2025 - Present",
+          "url": "https://gerador-orcamentos-demo.vercel.app/",
+          "bullets": [
+            "Architect, develop and continuously maintain a SaaS application in real-world use, covering customers, products, quotations, history, production by department and purchasing.",
+            "Implemented authentication and role-based access control (RBAC) for six roles (admin, salesperson, department operator, finance, purchasing and inactive users), protected by PostgreSQL Row Level Security (RLS) policies.",
+            "Developed item cloning and dynamic reordering, three PDF templates (Sales, Production Order and Finance), attachment management and Excel report exports."
+          ]
+        },
+        {
+          "company": "Nasajon Sistemas",
+          "role": "Quality Assurance (QA) Intern - ERP & Web Applications",
+          "dates": "Oct 2025 - Present",
+          "bullets": [
+            "Analyze and validate critical functionality in the Finance, Services and HR modules of Nasajon ERP and web systems in staging, investigating root causes and verifying code fixes.",
+            "Structure executable specifications in BDD / Gherkin, monitor builds and collaborate with the development team on the evolution of test automation."
+          ]
+        },
+        {
+          "company": "Gnaritas Sistemas",
+          "role": "IT Intern - TOTVS ERP Support & Acceptance Testing",
+          "dates": "Aug 2024 - Feb 2025",
+          "bullets": [
+            "Functionally validated new routines developed in TOTVS Datasul ERP, administered corporate permissions and access, and handled technical ticket resolution through Zendesk and Fluig."
+          ]
+        },
+        {
+          "company": "Lirdio",
+          "role": "Full Stack Developer",
+          "dates": "Jan 2023 - Dec 2023",
+          "note": "Finalist - Salvador Lab & Bahia Tech Experience",
+          "bullets": [
+            "Worked in a team to build an audiobook-streaming web platform, from Figma prototyping to the responsive front end (HTML, CSS, JavaScript, Bootstrap), SQL integration and load testing with JMeter."
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "title": "RagTest - Hybrid RAG Architecture & FastAPI",
+          "url": "https://github.com/Daniel-SLima/RagTest",
+          "bullets": [
+            "Built a modular AI application with hybrid vector search, a FastAPI REST API, a React Native mobile client, automated grounding checks, tests and a CI/CD pipeline."
+          ]
+        },
+        {
+          "title": "Vira Finanças (Android) & OrganizaBot (Python)",
+          "url": "https://github.com/Daniel-SLima/Vira_Financas",
+          "bullets": [
+            "Developed a native offline Android application in Kotlin and SQLite with financial planning, secure backup and GitHub Actions CI, plus a Python/Flask web tool validated with Pytest."
+          ]
+        },
+        {
+          "title": "Playwright E2E Suite & SQL/Supabase RLS Architecture",
+          "url": "https://github.com/Daniel-SLima/playwright-erp-qa-suite",
+          "bullets": [
+            "Built an E2E and API suite in TypeScript (Page Object Model) testing OrçaDemo in CI, alongside PostgreSQL/RLS relational modeling and unit tests for sales approval limits."
+          ]
+        }
+      ]
+    }
+  ]
+}
