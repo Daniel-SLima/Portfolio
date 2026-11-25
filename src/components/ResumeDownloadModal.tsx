@@ -63,7 +63,7 @@ export function ResumeDownloadModal({
             onClick={onClose}
             aria-label="Fechar janela de currículos"
             autoFocus
-            className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-800 bg-slate-950 text-slate-400 transition-colors hover:text-white cursor-pointer"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-slate-800 bg-slate-950 text-slate-400 transition-colors hover:text-white cursor-pointer"
           >
             <X className="h-5 w-5" />
           </button>

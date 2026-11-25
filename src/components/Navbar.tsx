@@ -23,15 +23,15 @@ export function Navbar({ onOpenResumeModal, activePage = "home" }: NavbarProps) 
     <header className="print:hidden fixed top-4 left-4 right-4 z-50">
       <nav
         aria-label="Navegação principal"
-        className="mx-auto max-w-7xl rounded-2xl border border-slate-800/90 bg-slate-900/80 px-4 py-3 shadow-xl shadow-slate-950/60 backdrop-blur-md sm:px-6"
+        className="mx-auto max-h-[calc(100dvh-2rem)] max-w-7xl overflow-y-auto rounded-2xl border border-slate-800/90 bg-slate-900/80 px-4 py-3 shadow-xl shadow-slate-950/60 backdrop-blur-md sm:px-6"
       >
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-2 sm:gap-4">
           {/* Logo */}
           <Link
             href="/"
             className="flex items-center gap-2.5 text-slate-50 transition-colors duration-200 hover:text-emerald-400 cursor-pointer"
           >
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-400">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-400">
               <Terminal className="h-5 w-5" />
             </span>
             <div className="leading-tight">
@@ -109,31 +109,35 @@ export function Navbar({ onOpenResumeModal, activePage = "home" }: NavbarProps) 
           </div>
 
           {/* Actions */}
-          <div className="flex items-center gap-2">
+          <div className="flex shrink-0 items-center gap-2">
             {onOpenResumeModal ? (
               <button
                 type="button"
                 onClick={onOpenResumeModal}
-                className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-3.5 py-2 text-xs font-semibold text-slate-950 shadow-lg shadow-emerald-500/20 transition-colors duration-200 hover:bg-emerald-400 cursor-pointer sm:text-sm"
+                aria-label="Currículos (PDF)"
+                className="inline-flex h-11 w-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-emerald-500 text-xs font-semibold text-slate-950 shadow-lg shadow-emerald-500/20 transition-colors duration-200 hover:bg-emerald-400 cursor-pointer sm:w-auto sm:px-3.5 sm:text-sm"
               >
                 <FileText className="h-4 w-4" />
-                <span>Currículos (PDF)</span>
+                <span className="hidden sm:inline">Currículos (PDF)</span>
               </button>
             ) : (
               <Link
                 href="/#contato"
-                className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-3.5 py-2 text-xs font-semibold text-slate-950 transition-colors duration-200 hover:bg-emerald-400 cursor-pointer sm:text-sm"
+                aria-label="Currículos"
+                className="inline-flex h-11 w-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-emerald-500 text-xs font-semibold text-slate-950 transition-colors duration-200 hover:bg-emerald-400 cursor-pointer sm:w-auto sm:px-3.5 sm:text-sm"
               >
                 <FileText className="h-4 w-4" />
-                <span>Currículos</span>
+                <span className="hidden sm:inline">Currículos</span>
               </Link>
             )}
 
             <button
               type="button"
               aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-navigation"
               onClick={() => setMobileOpen((prev) => !prev)}
-              className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-800 bg-slate-900 text-slate-300 hover:text-white lg:hidden cursor-pointer"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-slate-800 bg-slate-900 text-slate-300 hover:text-white lg:hidden cursor-pointer"
             >
               {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -142,7 +146,7 @@ export function Navbar({ onOpenResumeModal, activePage = "home" }: NavbarProps) 
 
         {/* Mobile Drawer */}
         {mobileOpen && (
-          <div className="mt-3 flex flex-col gap-1 border-t border-slate-800 pt-3 lg:hidden">
+          <div id="mobile-navigation" className="mt-3 flex flex-col gap-1 border-t border-slate-800 pt-3 lg:hidden">
             <Link
               href="/"
               onClick={() => setMobileOpen(false)}

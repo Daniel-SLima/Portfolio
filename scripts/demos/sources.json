@@ -1,11 +1,11 @@
 {
   "orcamentos": {
     "repository": "Daniel-SLima/gerador_orcamentos_demo",
-    "commit": "b82a1f98d94f87e379f20ef719d84fbda6174455"
+    "commit": "399c1940166dfb798dbb74b017b310b2e395e314"
   },
   "vlinix": {
     "repository": "Daniel-SLima/vlinix",
-    "commit": "cdbc2e3cac209011aadcc0a4292a674146874135",
+    "commit": "5f78f6f7e9dc92fff48d44d6cc65d0cb57113506",
     "flutterVersion": "3.38.10"
   }
 }
