@@ -37,13 +37,13 @@ export function ProjectsSection() {
           <div>
             <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-indigo-400">
               <Layers className="h-4 w-4" />
-              Projetos & Reconhecimentos Verificados
+              Projetos & Reconhecimentos
             </span>
             <h2 className="mt-2 font-display text-2xl font-bold text-slate-50 sm:text-4xl">
               Sistemas em Produção, Automação QA, IA & Premiações
             </h2>
             <p className="mt-2 max-w-2xl text-sm text-slate-400 sm:text-base">
-              Todos os links abaixo apontam para demonstrações funcionais e repositórios reais publicados no meu GitHub.
+              Experimente Floricultura, Vlinix e OrçaDemo com dados fictícios no navegador. Conheça também os repositórios públicos e os demais projetos.
             </p>
           </div>
           <a
@@ -111,6 +111,11 @@ export function ProjectsSection() {
                   <p className="mt-3 text-sm leading-relaxed text-slate-300">
                     {project.description}
                   </p>
+                  {project.demoNotice && (
+                    <p className="mt-4 rounded-xl border border-sky-500/25 bg-sky-500/10 p-3 text-sm leading-relaxed text-sky-100">
+                      {project.demoNotice}
+                    </p>
+                  )}
 
                   {/* Demo Credentials Helper when available */}
                   {project.demoCredentials && (

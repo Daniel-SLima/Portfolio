@@ -39,5 +39,7 @@ jobs:
       - name: Run strict TypeScript check
         run: npm run typecheck
 
-      - name: Build Next.js production bundle
+      - name: Build the portfolio with the GitHub Pages base path
+        env:
+          GITHUB_PAGES: 'true'
         run: npm run build

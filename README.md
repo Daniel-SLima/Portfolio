@@ -31,6 +31,20 @@
 
 Os arquivos antigos de Dados/Operações, inglês genérico e exportação do LinkedIn foram retirados da seleção de currículos atuais. Seus caminhos foram preservados para manter o acesso por links já compartilhados; eles não são as versões atualizadas.
 
+## Demonstrações no GitHub Pages
+
+| Projeto | Demonstração | O que experimentar |
+| --- | --- | --- |
+| Floricultura Rosa | [Catálogo e pedidos](https://daniel-slima.github.io/Portfolio/demos/floricultura/) | Produtos fictícios, sacola, prévia de mensagem e painel local |
+| Vlinix | [Gestão para detailers](https://daniel-slima.github.io/Portfolio/demos/vlinix/) | Clientes, veículos, serviços, agenda e finanças de exemplo |
+| OrçaDemo | [Orçamentos e produção](https://daniel-slima.github.io/Portfolio/demos/orcamentos/) | Clientes, produtos, orçamentos, produção e PDFs demonstrativos |
+
+As três versões usam dados fictícios e armazenam as alterações somente no navegador do visitante, em namespaces separados. A restauração de uma demo não apaga as outras. Não há acesso aos bancos de produção, envio de mensagens ou processamento de pagamentos. Os projetos reais continuam descritos separadamente de suas versões demonstrativas.
+
+O workflow de publicação constrói OrçaDemo e Vlinix a partir dos commits exatos em [`scripts/demos/sources.json`](scripts/demos/sources.json). A demonstração da Floricultura é distribuída em `public/demos/floricultura/` como um artefato estático sanitizado, sem source maps ou configurações privadas. Os arquivos editáveis desse projeto permanecem no repositório privado.
+
+Depois de compilar o portfólio com `GITHUB_PAGES=true`, execute `node scripts/demos/build-demos.mjs` para incluir os dois projetos públicos (Node 22 e Flutter 3.38.10). `python3 scripts/demos/verify-export.py` valida o artefato completo antes da publicação, incluindo currículos, páginas das três demos, caminhos de assets e os recursos locais do Flutter. Atualizações de fonte são incorporadas alterando os commits fixados no manifesto após a validação.
+
 ---
 
 ## Como Rodar Localmente

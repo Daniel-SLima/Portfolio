@@ -51,6 +51,7 @@ export interface ProjectItem {
   demoLabel?: string;
   externalDemoUrl?: string;
   externalDemoLabel?: string;
+  demoNotice?: string;
   demoCredentials?: { email: string; password: string };
   githubRepoName?: string;
   githubUrl?: string;
@@ -283,21 +284,21 @@ export const PROJECTS: ProjectItem[] = [
   {
     id: "saas-gestao",
     title: "OrçaDemo — Sistema SaaS de Gestão Comercial e Produção",
-    subtitle: "Produto em uso real + Versão Demo Pública • Next.js, TypeScript & Supabase",
-    badge: "Em Produção + Demo Online",
+    subtitle: "Aplicação real com demonstração isolada • Next.js & TypeScript",
+    badge: "Produto real • Demo local",
     accent: "indigo",
     description:
-      "Plataforma desenvolvida e mantida em ambiente real para digitalizar orçamentos, clientes, produtos, ordens de produção e compras. Conta com demonstração pública isolada na Vercel e simulador rápido de alçada RBAC e SQL.",
+      "Plataforma desenvolvida e mantida em ambiente real para organizar orçamentos, clientes, produtos, produção e compras. A demonstração no GitHub Pages permite experimentar esses fluxos com dados fictícios salvos somente no navegador.",
     technicalHighlights: [
-      "Autenticação e controle de acesso por perfis (RBAC) com políticas de segurança no banco (Supabase RLS).",
+      "A aplicação original utiliza autenticação, perfis de acesso (RBAC) e políticas Supabase RLS; a demo usa uma sessão e uma base locais.",
       "Criação, edição, clonagem e reordenação de itens de orçamento com histórico e fluxo de produção por setores.",
       "Geração dinâmica de orçamentos e ordens de produção em PDF e exportação de relatórios para Excel.",
       "Evolução contínua com Git/GitHub, Claude Code, Codex e agentes de IA.",
     ],
     stack: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL / RLS", "Tailwind CSS", "PDF & Excel"],
-    externalDemoUrl: "https://gerador-orcamentos-demo.vercel.app",
-    externalDemoLabel: "Abrir OrçaDemo Online",
-    demoCredentials: { email: "admin@admin.com", password: "admin123" },
+    externalDemoUrl: withBasePath("/demos/orcamentos/"),
+    externalDemoLabel: "Explorar OrçaDemo",
+    demoNotice: "Dados de exemplo no seu navegador. Entrada sem senha e opção de restaurar a demonstração.",
     demoHref: "/saas-demo",
     demoLabel: "Simulador RBAC & SQL",
     githubRepoName: "gerador_orcamentos_demo",
@@ -306,6 +307,52 @@ export const PROJECTS: ProjectItem[] = [
       { label: "Status", value: "Uso Real" },
       { label: "Exportação", value: "PDF & Excel" },
       { label: "Segurança", value: "RBAC + RLS" },
+    ],
+  },
+  {
+    id: "floricultura-rosa",
+    title: "Floricultura Rosa — Catálogo e Pedidos",
+    subtitle: "Catálogo digital para floriculturas • React, Vite & Tailwind CSS",
+    badge: "Demonstração local",
+    accent: "emerald",
+    description:
+      "Projeto de catálogo que organiza a seleção de produtos para atendimento pelo WhatsApp. Nesta versão demonstrativa, o visitante explora o catálogo, monta a sacola e vê a prévia do pedido com produtos fictícios.",
+    technicalHighlights: [
+      "Busca, filtros e ordenação do catálogo, com detalhes e quantidades dos produtos.",
+      "Carrinho, revisão do pedido e prévia da mensagem, sem enviar mensagens para uma loja.",
+      "Painel de produtos e histórico de pedidos de exemplo, com alterações e restauração apenas no navegador.",
+    ],
+    stack: ["React", "Vite", "Tailwind CSS", "localStorage"],
+    externalDemoUrl: withBasePath("/demos/floricultura/"),
+    externalDemoLabel: "Explorar Floricultura",
+    demoNotice: "Demonstração com dados fictícios. Nenhum pedido é enviado e nenhum estoque real é alterado.",
+    metrics: [
+      { label: "Experiência", value: "Catálogo & Sacola" },
+      { label: "Dados", value: "Somente local" },
+    ],
+  },
+  {
+    id: "vlinix-detailer",
+    title: "Vlinix — Gestão para Detailers",
+    subtitle: "Organização do profissional de estética automotiva • Flutter & Dart",
+    badge: "Demonstração local",
+    accent: "sky",
+    description:
+      "Aplicativo para organizar a carteira de clientes, os veículos, os serviços, os agendamentos e o controle financeiro de um profissional de limpeza automotiva. A versão web demonstra os fluxos com uma base fictícia independente da operação real.",
+    technicalHighlights: [
+      "Telas do próprio aplicativo para clientes, agenda, serviços e finanças.",
+      "Cadastros e alterações persistidos apenas no navegador do visitante.",
+      "Modo demonstração sem autenticação real, com dados iniciais e restauração da base de exemplo.",
+    ],
+    stack: ["Flutter", "Dart", "Flutter Web", "Armazenamento local"],
+    externalDemoUrl: withBasePath("/demos/vlinix/"),
+    externalDemoLabel: "Explorar Vlinix",
+    demoNotice: "Dados de exemplo no seu navegador. A demonstração não acessa o banco de clientes real.",
+    githubRepoName: "vlinix",
+    githubUrl: "https://github.com/Daniel-SLima/vlinix",
+    metrics: [
+      { label: "Organização", value: "Clientes & Agenda" },
+      { label: "Gestão", value: "Finanças" },
     ],
   },
   {

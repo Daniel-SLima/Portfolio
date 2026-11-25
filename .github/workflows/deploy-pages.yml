@@ -1,4 +1,4 @@
-name: Deploy Next.js Portfolio to GitHub Pages
+name: Deploy Portfolio and Browser Demos to GitHub Pages
 
 on:
   push:
@@ -17,6 +17,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -33,10 +34,28 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Check portfolio types
+        run: npm run typecheck
+
       - name: Build Next.js Static Export
         env:
           GITHUB_PAGES: "true"
         run: npm run build
+
+      - name: Setup Flutter for the browser-only Vlinix demonstration
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.38.10'
+          channel: stable
+          cache: true
+
+      - name: Build demonstrations from pinned source commits
+        run: node scripts/demos/build-demos.mjs
+        env:
+          CI: 'true'
+
+      - name: Verify the complete Pages artifact
+        run: python3 scripts/demos/verify-export.py
 
       - name: Add .nojekyll to preserve _next folder
         run: touch ./out/.nojekyll
